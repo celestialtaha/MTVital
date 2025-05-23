@@ -8,12 +8,12 @@ from models.models import Model_vault
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', type=str, required=True, default='hr', help='The training mode (hr or spo2)')
 parser.add_argument('--dataset',type=str, required=False, default='mths', help='The name of the dataset to train on.')
-parser.add_argument('--downsample',type=str, required=False, default=2, help='The down sample factor for ppg signals')
-parser.add_argument('--timelen',type=str, required=False, default=10, help='time length of each input signal to the neural net')
-parser.add_argument('--batchsize',type=str, required=False, default=32, help='batch size')
-parser.add_argument('--epochs',type=str, required=False, default=125, help='number of training epochs')
-parser.add_argument('--testsize',type=str, required=False, default=0.2, help='testset proportion (of the whole data)')
-parser.add_argument('--valsize',type=str, required=False, default=0.15, help='validation set proportion (of the train data)')
+parser.add_argument('--downsample',type=int, required=False, default=2, help='The down sample factor for ppg signals')
+parser.add_argument('--timelen',type=int, required=False, default=10, help='time length of each input signal to the neural net')
+parser.add_argument('--batchsize',type=int, required=False, default=32, help='batch size')
+parser.add_argument('--epochs',type=int, required=False, default=125, help='number of training epochs')
+parser.add_argument('--testsize',type=float, required=False, default=0.2, help='testset proportion (of the whole data)')
+parser.add_argument('--valsize',type=float, required=False, default=0.15, help='validation set proportion (of the train data)')
 parser.add_argument('--savedir',type=str, required=False, default='./', help='Specifies a directory to save the trained models')
 
 # ------------- Parse cml arguments and set config ------------------ #
